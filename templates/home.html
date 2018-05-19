@@ -1,0 +1,28 @@
+<div id="homepage">
+<h1>{{ title }}</h1>
+<p>You are logged in as: {{ loggedInUser }}</p>
+<p>It should get loaded into the data-ng-view div in my index.html file
+, now let's all go for a {{ favouriteDessert }}.</p>
+
+<h2>List of Desserts</h2>
+
+
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Description</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="dessert in desserts">
+            <td>{{ dessert.name }}</td>
+            <td>{{ dessert.description }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="/add">Add a new dessert</a>
+</div>

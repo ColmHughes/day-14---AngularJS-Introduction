@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="registrationForm" data-ng-submit="submitForm()" novalidate>
+            <!--After that we’re giving it the ng-submit attribute. This attribute will tells Angular what to do once the form is submitted. -->
+            <!--In this instance we’re going to call a method called submitForm.-->
+            <!--Lastly, we have the novalidate attribute. This just tells HTML that we don’t want to use its default validation mechanism.-->
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control" data-ng-model="user.username" required>
+                    <!--The ng-model will create a new JavaScript object on the $scope object. -->
+                    <!--This allows Angular to handle the information sent from the form in the controller.-->
+                    <!--In this instance, the model that we’re creating is user and the first property we’re giving the new user object is username.-->
+                    <p data-ng-show="registrationForm.name.$pristine" class="help-block">Your username is required</p>
+                    <!--Inside that paragraph we’re using ng-show. ng-show allows to choose to show/hide information based on certain conditions.-->
+                    <!--This will display the message “Your username is required” if the username field is pristine. -->
+                    <!--$pristine just means that the field is hasn’t been touched yet! $pristine will always be a true or false value.-->
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" class="form-control" data-ng-model="user.password" required>
+                    <p data-ng-show="registrationForm.password.$pristine" class="help-block">Your password is required</p>
+                </div>
+                <button type="submit" class="btn btn-primary" data-ng-disabled="registrationForm.$invalid">Register</button>
+                <!--The ng-disable just checks to see if registrationForm has any $invalid fields. If a field is $pristine, then it’s also considered to be $invalid. -->
+                <!--As soon as we fill out both fields in our form, the submit button will no longer be disabled.-->
+            </form>
+        </div>   
+    </div> 
+    <div class="row">
+        <div class="col-sm-12">
+        </div>
+    </div>
+</div>                
+                
+                
+            
